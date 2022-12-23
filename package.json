@@ -1,0 +1,19 @@
+{
+  "name": "luna-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "9.7.0"
+  },
+  "devDependencies": {
+    "cypress-otp": "^1.0.3",
+    "cypress-social-logins": "^1.14.0"
+  }
+}
