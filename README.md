@@ -38,7 +38,7 @@ This repository contains all test scripts for  [Luna](https://www.getluna.com) w
 
 #### Command should run like this
 
-- "node_modules/gmail-tester-extended/init.js credentials-test-automation-1.json token-test-automation-2.json test-automation-1@getluna.com"
+- "node_modules/gmail-tester-extended/init.js credentials-test-automation-1.json token-test-automation-1.json test-automation-1@getluna.com"
 
 Check more info about here:
 - https://github.com/kateyurasova/gmail-tester
