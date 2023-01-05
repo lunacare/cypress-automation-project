@@ -28,17 +28,17 @@ This repository contains all test scripts for  [Luna](https://www.getluna.com) w
 ### node <node_modules>/gmail-tester-extended/init.js <path-to-credentials.json> <path-to-token.json> <target-email>
 
 
-<node_modules>/gmail-tester-extended/init.js: path to the  node_modules folder, inside the node_modules folder there should be module 'gmail-tester-extended', and inside there should be the init.js file
+"<node_modules>/gmail-tester-extended/init.js": path to the  node_modules folder, inside the node_modules folder there should be module 'gmail-tester-extended', and inside there should be the init.js file
 
-<path-to-credentials.json>: this is the path of the credential file (credentials-test-automation-1.json or credentials-test-automation-2.json). 
+"<path-to-credentials.json>": this is the path of the credential file (credentials-test-automation-1.json or credentials-test-automation-2.json). 
 
-<path-to-token.json>: this file in generated if the command works. the name used is "token-test-automation-1.json"
+"<path-to-token.json>": this file in generated if the command works. the name used is "token-test-automation-1.json"
 
-<target-email>: this is the email we want to generate token for.
+"<target-email>": this is the email we want to generate token for.
 
-#### Command should run like than
+#### Command should run like this
 
-- node_modules/gmail-tester-extended/init.js credentials-test-automation-1.json token-test-automation-2.json test-automation-1@getluna.com
+- "node_modules/gmail-tester-extended/init.js credentials-test-automation-1.json token-test-automation-2.json test-automation-1@getluna.com"
 
 Check more info about here:
 - https://github.com/kateyurasova/gmail-tester
