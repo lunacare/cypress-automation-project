@@ -1,0 +1,6 @@
+node_modules/
+.idea/
+credentials-test-automation-1.json
+credentials-test-automation-2.json
+token-test-automation-1.json
+token-test-automation-2.json
