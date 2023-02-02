@@ -25,10 +25,10 @@ This repository contains all test scripts for  [Luna](https://www.getluna.com) w
 ## Generating token for gmail-tester account
 - Confirm path of files and run next command in terminal
 
-### node <node_modules>/gmail-tester-extended/init.js <path-to-credentials.json> <path-to-token.json> <target-email>
+### node <node_modules>/gmail-tester/init.js <path-to-credentials.json> <path-to-token.json> <target-email>
 
 
-"<node_modules>/gmail-tester-extended/init.js": path to the  node_modules folder, inside the node_modules folder there should be module 'gmail-tester-extended', and inside there should be the init.js file
+"<node_modules>/gmail-tester/init.js": path to the  node_modules folder, inside the node_modules folder there should be module 'gmail-tester-extended', and inside there should be the init.js file
 
 "<path-to-credentials.json>": this is the path of the credential file (credentials-test-automation-1.json or credentials-test-automation-2.json). 
 
@@ -38,7 +38,12 @@ This repository contains all test scripts for  [Luna](https://www.getluna.com) w
 
 #### Command should run like this
 
-- "node_modules/gmail-tester-extended/init.js credentials-test-automation-1.json token-test-automation-1.json test-automation-1@getluna.com"
+- "node node_modules/gmail-tester/init.js credentials-test-automation-1.json token-test-automation-1.json test-automation-1@getluna.com"
+
+- Make sure to set next values for "redirect_uris" : http://localhost:3000/callback, https://developers.google.com/oauthplayground, https://luxe.alpha.getluna.com/omniauth/google_oauth2/callback
+
+- in case of errors redirecting add this to credentials-test-automation-1.json file: "redirect_uris":["http://localhost:3000/callback","https://developers.google.com/oauthplayground","https://luxe.alpha.getluna.com/omniauth/google_oauth2/callback"]
+
 
 Check more info about here:
 - https://github.com/kateyurasova/gmail-tester

@@ -6,7 +6,9 @@ Cypress.Commands.add("getVerificationCode", (_from, _subject, _to, _include_body
             from: _from,
             subject: _subject,
             to: _to,
-            include_body: _include_body
+            include_body: _include_body,
+            wait_time_sec: 50,
+            max_wait_time_sec: 60,
             },
         }).then((emails) => {
 

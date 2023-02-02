@@ -4,7 +4,8 @@ import {getVerificationCode} from '../../support/GetVerificationCode.js'
 
 describe("Email assertion:", () => {
 
-   it("Using gmail_tester.get_messages(), look for an email with specific subject and link in email body", function () {
+before('authentication with OAUTH', function() {
+    cy.viewport('macbook-16')
     let code='';
      cy.visit('https://app.hubspot.com/login')
       cy.contains('Sign in with Google', { timeout: 5000 }).click()
@@ -18,10 +19,23 @@ describe("Email assertion:", () => {
                     cy.get("#code").type(code)
                     cy.get("button[type='submit']", { timeout: 5000 }).click()
                   })
+
         } else {
            assert.isOk('everything','everything is OK');
         }
       })
-
     });
+
+
+it("Creating therapist ", function () {
+
+ cy.get('[href="?isDestination=false"]', { timeout: 5000 }).should('be.visible').first().click()
+ cy.get('[href="https://app.hubspot.com/contacts/7712148/contacts"]', { timeout: 5000 }).should('be.visible').first().click()
+ cy.get('[data-selenium-test="new-object-button"]', { timeout: 5000 }).should('be.visible').first().click()
+ cy.get('[data-selenium-test="new-object-button"]', { timeout: 5000 }).should('be.visible').first().click()
+
+});
+
+
+
 })

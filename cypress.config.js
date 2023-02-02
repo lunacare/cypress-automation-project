@@ -11,7 +11,7 @@ module.exports = defineConfig({
   env: {
     EMAIL1: 'test-automation-1@getluna.com',
     EMAIL: 'test-automation-2@getluna.com',
-    PASSWORD: 'Alg@rrobo1012!'
+    PASSWORD: 'Alg@rrobo10123!'
   },
   userAgent:
     'user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36',
@@ -19,7 +19,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on("task", {
         "gmail:gmail:get-messages": async (args) => {
-          const messages = await gmailTester.get_messages(
+          const messages = await gmailTester.check_inbox(
             path.resolve(__dirname, "credentials-test-automation-1.json"),
             path.resolve(__dirname, "token-test-automation-1.json"),
             args.options
