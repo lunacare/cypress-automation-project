@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 const {GoogleSocialLogin} = require('cypress-social-logins').plugins
-require('tsconfig-paths').register()
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -38,9 +37,6 @@ async function moreSteps({page, options} = {}) {
 
   cy.wait(15000)
   })
-  
-  
-  //await page.click('#pin_Field') 
 }
 
 

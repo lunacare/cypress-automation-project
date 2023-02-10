@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
-import {getVerificationCode} from '../../support/GetVerificationCode.js'
-import {gmailAuthentication} from '../../support/GoogleAuthenticationGeneric.js'
+
+import {getVerificationCode} from '@support/GetVerificationCode.js'
+import {gmailAuthentication} from '@support/GoogleAuthenticationGeneric.js'
 
 describe("Email assertion:", () => {
 

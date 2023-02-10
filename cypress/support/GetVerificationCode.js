@@ -1,4 +1,4 @@
-Cypress.Commands.add("getVerificationCode", (_from, _subject, _to, _include_body) => {
+Cypress.Commands.add("getVerificationCode", (_from, _subject, _to, _include_body, _before, _after) => {
 
 
         cy.task("gmail:gmail:get-messages", {
@@ -7,7 +7,7 @@ Cypress.Commands.add("getVerificationCode", (_from, _subject, _to, _include_body
             subject: _subject,
             to: _to,
             include_body: _include_body,
-            wait_time_sec: 50,
+            wait_time_sec: 10,
             max_wait_time_sec: 60,
             },
         }).then((emails) => {
