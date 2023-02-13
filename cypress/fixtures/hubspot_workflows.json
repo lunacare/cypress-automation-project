@@ -1,0 +1,8 @@
+{
+    "ALPHA":{
+                "draft_therapists":"/automation/v2/workflows/16912174/enrollments/contacts/:email"
+            },
+    "BETA":{
+        "draft_therapists":"/automation/v2/workflows/16912174/enrollments/contacts/:email"
+    }
+}

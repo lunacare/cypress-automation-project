@@ -1,0 +1,33 @@
+{
+"hubspot_therapist": {
+        "path": "/crm/v3/objects/contacts",
+        "body": {
+          "properties": {
+            "email": "auto_populated",
+            "therapist_or_patient_": "Therapist",
+            "firstname": "Automation",
+            "lastname": "hubspot",
+            "pt_license_number": "1234567890",
+            "emr_created": "1678320000000",
+            "hs_lead_status": "Therapist - Qualified",
+            "desired_weekly_appointments": "5",
+            "bank_account_type": "business",
+            "pet_allergies": "yes",
+            "specialties_credentialing_form": "Geriatric,Neurologic",
+            "address": "55 Golden street",
+            "city": "Bay Area",
+            "state": "California",
+            "zip": "92345",
+            "treating_city": "Bay Area",
+            "treating_street_address": "55 Golden street",
+            "treating_postal_code": "92345",
+            "treating_state": "California",
+            "gender": "male",
+            "date_of_birth": "668476800000",
+            "phone": "3335557777",
+            "desired_signature": "yes",
+            "booking_specialty": "exact"
+          }
+      }
+    }
+  }

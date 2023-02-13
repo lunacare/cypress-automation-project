@@ -1,3 +1,9 @@
+const requests = require("@fixtures/hubspot_requests.json");
+const workflowData = require("@fixtures/hubspot_workflows.json");
+import {getCurrentTimestamp} from '@support/utils.js'
+import {getUTCDate} from '@support/utils.js'
+import {getNumberInRange} from '@support/utils.js'
+
 export class HubspotPage{
 
 constructor(){
@@ -19,36 +25,18 @@ getBaseUrlForApi(){
    return  "https://api.hubapi.com";
 }
 
-getCreateTherapistApi(){
-    return {
-            "data": {
-                "path": "/crm/v3/objects/contacts",
-                "body":{
-                    "properties": {
-                        "email":"yuly.murillo+t30@koombea.com",
-                        "therapist_or_patient_":"Therapist",
-                        "pt_license_number":"1234567890",
-                        "emr_created":"1678320000000",
-                        "hs_lead_status":"Therapist - Qualified",
-                        "desired_weekly_appointments":"5",
-                        "bank_account_type":"savings",
-                        "pet_allergies":"yes",
-                        "specialties_credentialing_form":"0",
-                        "address":"55 Golden street",
-                        "city":"Bay Area",
-                        "state":"California",
-                        "zip":"92345",
-                        "treating_city":"Bay Area",
-                        "treating_street_address":"55 Golden street",
-                        "treating_postal_code":"92345",
-                        "treating_state":"California",
-                        "gender":"male",
-                        "date_of_birth":"668476800000"
-                    }
-                }
-        }
-    }
-       
+getCreateTherapistApiPayload(){
+
+    requests.hubspot_therapist.body.properties.email = "yuly.murillo+"+getCurrentTimestamp("YYYYMMDDHHmmss",false)+"@koombea.com";
+    requests.hubspot_therapist.body.properties.date_of_birth =getUTCDate(getNumberInRange(1950, 1991),getNumberInRange(1, 13),getNumberInRange(1, 31))
+    requests.hubspot_therapist.body.properties.emr_created = getUTCDate(getNumberInRange(2018, 2024),getNumberInRange(1, 13),getNumberInRange(1, 31))
+
+     return requests.hubspot_therapist
+     
+}
+
+getSyncTherapistUrl(email){
+    return workflowData[Cypress.env('environment')].draft_therapists.replace(":email",email);
 }
 
 
