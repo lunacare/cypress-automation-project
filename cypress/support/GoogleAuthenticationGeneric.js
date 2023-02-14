@@ -5,7 +5,7 @@ export function gmailAuthentication(email,password){
         cy.get('#identifierNext > div > button').click()
         cy.wait(5000)
         Cypress.on('uncaught:exception', (err) => !err.message.includes('ResizeObserver loop limit exceeded'))
-        cy.get("input[type='password']").type(password)
+        cy.get("input[type='password']").first().type(password)
         cy.get('#passwordNext > div > button').click()
     })
 }

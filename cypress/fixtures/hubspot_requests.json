@@ -5,7 +5,7 @@
           "properties": {
             "email": "auto_populated",
             "therapist_or_patient_": "Therapist",
-            "firstname": "Automation",
+            "firstname": "Therapist Automation",
             "lastname": "hubspot",
             "pt_license_number": "1234567890",
             "emr_created": "1678320000000",
@@ -29,5 +29,23 @@
             "booking_specialty": "exact"
           }
       }
+    },
+    "hubspot_physician": {
+      "body": {
+        "properties": {
+          "email": "auto_populated",
+          "therapist_or_patient_": "Physician",
+          "firstname":"auto_populated",
+          "lastname":"Hubspot Automation",
+          "phone": "3335557777",
+          "fax":"2129876543",
+          "npi": "1234567891",
+          "prefix":"dr",
+          "portal_email_cadence":"opt-out",
+          "fax_every_visit":"",
+          "address": "55 Golden street",
+          "zip": "91420"
+      }
     }
+  }
   }

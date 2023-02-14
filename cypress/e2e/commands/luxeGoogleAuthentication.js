@@ -6,5 +6,5 @@ Cypress.Commands.add("luxeAuthentication", () => {
       cy.contains('Sign In', { timeout: 5000 }).click()
       context('GoogleAuthenticationGeneric.js', function(){
       gmailAuthentication(Cypress.env('EMAIL'),Cypress.env('PASSWORD'))})
-      cy.get('a[data-method="post"]', { timeout: 5000 }).should('be.visible').click()
+      cy.get('a[data-method="post"]', { timeout: 5000 }).should('be.visible').click()   
 });

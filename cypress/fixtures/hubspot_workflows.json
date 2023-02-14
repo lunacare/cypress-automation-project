@@ -1,8 +1,14 @@
 {
     "ALPHA":{
-                "draft_therapists":"/automation/v2/workflows/16912174/enrollments/contacts/:email"
+            "draft_therapists":"/automation/v2/workflows/16912174/enrollments/contacts/:email",
+            "physicians":"/automation/v2/workflows/16043097/enrollments/contacts/:email",
+            "patients":"/automation/v2/workflows/16043097/enrollments/contacts/:email"
+                
             },
     "BETA":{
-        "draft_therapists":"/automation/v2/workflows/16912174/enrollments/contacts/:email"
+        "draft_therapists":"/automation/v2/workflows/16912174/enrollments/contacts/:email",
+        "physicians":"/automation/v2/workflows/16043097/enrollments/contacts/:email",
+        "patients":"/automation/v2/workflows/16043097/enrollments/contacts/:email"
+                
     }
 }
