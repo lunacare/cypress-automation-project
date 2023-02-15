@@ -22,11 +22,12 @@ async function setupNodeEvents(on, config) {
       webpackOptions:{
         resolve:{
           alias:{
+             "@assertions":path.resolve(__dirname,"cypress/e2e/assertions"),
              "@commands":path.resolve(__dirname,"cypress/e2e/commands"),
-              "@fixtures":path.resolve(__dirname,"cypress/fixtures"),
-              "@support":path.resolve(__dirname,"cypress/support"),
-              "@pages":path.resolve(__dirname,"cypress/e2e/pages"),
-              "@config":path.resolve(__dirname,"cypress/e2e/config"),
+             "@fixtures":path.resolve(__dirname,"cypress/fixtures"),
+             "@support":path.resolve(__dirname,"cypress/support"),
+             "@pages":path.resolve(__dirname,"cypress/e2e/pages"),
+             "@config":path.resolve(__dirname,"cypress/e2e/config"),
           },
           extensions:[".js"],
         },

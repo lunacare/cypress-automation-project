@@ -1,19 +1,28 @@
 export class TherapistProfilePage{
 
 constructor(){
-    this.firsNameInput="#first_name";
-    this.lastnameInput="#lastname";
-    this.age="#age";
-    this.phone="#phone";
+    this.firsName="First Name";
+    this.lastname="Last Name";
+    this.credentials="Credentials";
+    this.birthday="Birthday";
+    this.gender="Gender";
+    this.phone_number="Phone";
+    this.email="Email";
+    this.legal_address = "Legal Address";
+    this.hubspot_id="HubSpot Contact";
+    this.npi="NPI"
+    this.status = "Status";
+    this.patient_acceptance_status="New Patient Acceptance Status";
+    this.appointments_week="Appointments / Week";
+    this.scheduling_preffered_status="Scheduling Preferred Status";
+    this.start_booking_date="Start Booking Date";
+    this.pet_friendly ="Pet Friendly?";
+    this.patient_preference="Patient Preference";
+    this.specialties="";
+
+
 }
 
-visit(){
-    cy.visit("https://luxe.alpha.getluna.com/admin/therapists");
-}
-
-getTherapist(){
-    cy.get(this.firsNameInput).type(data)
-}
 
 }
 
