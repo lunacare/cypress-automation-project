@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:repeat": "cypress-repeat run --config watchForFileChanges=false",
     "test": "cypress open run --config watchForFileChanges=false"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
     "babel-loader": "^9.1.2",
     "cypress": "^12.3.0",
     "cypress-otp": "^1.0.3",
+    "cypress-repeat": "^2.3.3",
     "cypress-social-logins": "^1.14.0",
     "gmail-tester": "^1.3.8",
     "webpack": "^5.75.0"

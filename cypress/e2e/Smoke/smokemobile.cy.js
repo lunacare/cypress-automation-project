@@ -19,8 +19,7 @@ describe('Therapist Smoke ', () => {
         expect(response.status).to.eq(200);
         expect(response.body.data.email).to.eq('demo+uat2@koombea.com');
         expect(response.body.data.state).to.eq('active');
-
-            
+   
     })  
 
 

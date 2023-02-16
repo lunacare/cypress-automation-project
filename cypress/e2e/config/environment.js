@@ -23,6 +23,7 @@ export const physician_data = {
 // ***************** URLs *****************
 export const jira_url = "https://lunacare.atlassian.net"
 export const luna_luxe_url = {"ALPHA": "https://luxe.alpha.getluna.com", "BETA": "https://luxe.beta.getluna.com"}
+export const luna_luxe_cookie = {"ALPHA": "__HOST-luxe_alpha_secure_session", "BETA": "__HOST-luxe_beta_secure_session"}
 
 
 // ***************** Users *****************
@@ -187,3 +188,4 @@ export const echo_user = {
         "password": "koombea1234"
     }
 }
+

@@ -11,8 +11,8 @@ export function getNumberInRange(min, max){
 };
 
 
-export function getUTCDate(year, month, day) {
-    return Date.UTC(year,month,day);
+export function getUTCDate(data) {
+    return Date.UTC(data.year,data.month,data.day);
 }
 
 export function getHubspotToken() {

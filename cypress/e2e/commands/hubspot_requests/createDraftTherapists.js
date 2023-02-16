@@ -4,7 +4,6 @@ import {getHubspotToken} from "@support/utils";
 Cypress.Commands.add("createDraftTherapist", () => {
 
   const createTherapistData = hubspotPage.getCreateTherapistApiPayload()
-
   const base_url = hubspotPage.getBaseUrlForApi()
   
   cy.request({
@@ -20,8 +19,13 @@ Cypress.Commands.add("createDraftTherapist", () => {
       failOnStatusCode: false
 
     }).then(response => {
-
+      var modified_response={
+        local_date_of_birth:createTherapistData.local_date_of_birth,
+        response: response
+      }
+  
       expect(response.status).to.be.eq(201)
+      return modified_response;
   
     });
 });

@@ -26,9 +26,13 @@ getBaseUrlForApi(){
 }
 
 getCreateTherapistApiPayload(){
-
+    var _month=getNumberInRange(1, 13);
+    var _day=getNumberInRange(1, 31)
+    var local_date_of_birth={year:getNumberInRange(1950, 1991),month:_month<10?"0"+_month:_month,day:_day<10?"0"+_day:_day}
+    
+    requests.hubspot_therapist.local_date_of_birth = local_date_of_birth
     requests.hubspot_therapist.body.properties.email = "yuly.murillo+t"+getCurrentTimestamp("YYYYMMDDHHmmss",false)+"@koombea.com";
-    requests.hubspot_therapist.body.properties.date_of_birth =getUTCDate(getNumberInRange(1950, 1991),getNumberInRange(1, 13),getNumberInRange(1, 31))
+    requests.hubspot_therapist.body.properties.date_of_birth =getUTCDate(local_date_of_birth)
     requests.hubspot_therapist.body.properties.emr_created = getUTCDate(getNumberInRange(2018, 2024),getNumberInRange(1, 13),getNumberInRange(1, 31))
 
      return requests.hubspot_therapist

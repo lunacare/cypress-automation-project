@@ -8,90 +8,81 @@ require("@commands/hubspot_requests/createDraftTherapists");
 require("@commands/hubspot_requests/createPhysician");
 require("@commands/luxe/luxeGoogleAuthentication");
 require("@commands/luxe/searchTherapistbyEmail");
+require("@commands/luxe/searchPhysicianByNpi");
 require("@assertions/luxe/therapistProfileAssertions");
 
 
-
-
-
-
 import {luna_luxe_url} from '@config/environment'
+import {luna_luxe_cookie} from '@config/environment'
 
 
-beforeEach(() =>{
+before(function(){
 
-  cy.session("preserving session",() =>{
     cy.luxeAuthentication()
+    cy.getCookie(luna_luxe_cookie[Cypress.env('environment')]).as("cookie") 
+  
+})
+
+afterEach(function(){
+  cy.session("preserving session",()=>{
+   
+    cy.setCookie(luna_luxe_cookie[Cypress.env('environment')],this.cookie.value,{
+      secure: true
+    })
   })
   cy.visit(luna_luxe_url[Cypress.env('environment')]+'/admin/dashboard')
 })
 
 
-Given("A patient is created thru API", () => {
-
- 
-   
-});
-
 
 Given("A physician is created thru API", () => {
-  /*cy.createPhysician().then(response =>{
+  cy.createPhysician().as("createPhysician").then(response =>{
     cy.syncPhysician(response.body.id, response.body.properties.email)
-  })*/
+  })
    
 });
 
 
 Given("A therapist is created thru API", () => {
   
-  cy.createDraftTherapist().as("createDraftTherapist").then(response =>{
-    cy.syncDraftTherapist(response.body.id, response.body.properties.email).as("syncDraftTherapist")
+  cy.createDraftTherapist().as("createDraftTherapist").then(modified_response =>{
+    cy.syncDraftTherapist(modified_response.response.body.id, modified_response.response.body.properties.email)
   })
-
    
 });
 
 
-When("It is searched in Luxe patient profiles", () => {
- /* cy.get('[href="/admin/patients"]').click({force:true})
-  cy.get('[name="q[search_by_email]"]').type("yuly.murillo@")
-  cy.get('[type="submit"]').click()*/
-   
-});
 
 When("It is searched in Luxe physician profiles", () => {
-  /*cy.get('[href="/admin/physicians"]').click({force:true})
-  cy.get('#q_email').type("yuly.murillo@")
-  cy.get('[type="submit"]').click()*/
+  cy.get("@createPhysician").then( response =>{
+    cy.searchPhysicianByNpi(response.body.properties.npi);
+  }).pause()
+
+
+  
    
 });
 
 When("It is searched in Luxe therapist profiles", () => {
-  /*cy.get('[href="/admin/therapists"]').click({force:true})
-  cy.get('[name="q[search_by_email]"]').type("yuly.murillo@")
-  cy.get('[type="submit"]').click()*/
+  
+  cy.get("@createDraftTherapist").then( response =>{
+    cy.searchTherapistbyEmail(response.body.properties.email);
+  })
   
 });
 
 Then("All therapist information matches", () => {
   
-  cy.get("@createDraftTherapist").then( response =>{
-    cy.searchTherapistbyEmail(response.body.properties.email);
-    cy.therapistProfileAssertions(response.body)
+  cy.get("@createDraftTherapist").then( modified_response =>{
+    cy.therapistProfileAssertions(modified_response)
   })
 
- /* cy.get("@syncDraftTherapist").then( response =>{
-    
-  })*/
-
 });
 
-Then("All patient information matches", () => {
-
-
-});
 
 Then("All physician information matches", () => {
-
+  cy.get("@createPhysician").then( response =>{
+    cy.therapistProfileAssertions(response.body)
+  })
 
 });

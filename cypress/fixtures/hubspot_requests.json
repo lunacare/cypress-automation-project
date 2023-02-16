@@ -1,6 +1,7 @@
 {
 "hubspot_therapist": {
         "path": "/crm/v3/objects/contacts",
+        "local_date_of_birth": "auto_populated",
         "body": {
           "properties": {
             "email": "auto_populated",
