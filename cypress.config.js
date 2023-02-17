@@ -14,7 +14,14 @@ async function setupNodeEvents(on, config) {
       );
       return messages;
     },
-  });       
+  });     
+  
+  on('task', {
+    log(message){
+      console.log(`console log task: ${message}`)
+      return null;
+    }
+  })
   
   await cucumberPreprocesor.addCucumberPreprocessorPlugin(on,config)
   on("file:preprocessor",
@@ -60,7 +67,7 @@ module.exports = defineConfig({
     EMAIL1: 'test-automation-1@getluna.com',
     EMAIL: 'test-automation-2@getluna.com',
     PASSWORD: 'Alg@rrobo10123!',
-    environment: 'BETA'
+    environment: 'ALPHA'
   },
   userAgent:
     'user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36',

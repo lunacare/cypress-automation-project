@@ -1,14 +1,14 @@
-export class TherapistsPage{
+export class PhysiciansPage{
 
 constructor(){
-    this.filterNpiInput='[name="q[npi_contains]"]';
+    this.filterNpiInput='#q_npi';
     this.filterbutton='[type="submit"]';
     this.viewPhysicianAction='[title=View]';
 
-
-
-}
+   
 
 }
 
-export const therapistsPage = new TherapistsPage();
+}
+
+export const physiciansPage = new PhysiciansPage();

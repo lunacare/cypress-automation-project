@@ -1,6 +1,7 @@
 export class TherapistProfilePage{
 
 constructor(){
+    this.element_to_wait_xpath="//*[@title='View']";
     this.firsName="First Name";
     this.lastname="Last Name";
     this.credentials="Credentials";

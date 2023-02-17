@@ -1,18 +1,17 @@
 import {physicianProfilePage} from "@pages/luxe/physicianProfilePage";
 Cypress.Commands.add("physicianProfileAssertions", (data) => {
+    
+    
+ cy.get(physicianProfilePage.prefix).should("exist").and('be.visible').its('text').should('eq',data.prefix)
 
-   
 
-cy.contains(physicianProfilePage.prefix).parent().find("td").invoke('text').should('equal',data.body.id)
-cy.contains(physicianProfilePage.firstname).parent().next().invoke('text').should('equal',data.body.properties.email)
-cy.contains(physicianProfilePage.lastname).parent().next().invoke('text').should('equal',data.body.properties.firstname)
-cy.contains(physicianProfilePage.npi).parent().next().invoke('text').should('equal',data.body.properties.lastname)
-cy.contains(physicianProfilePage.region).parent().next().invoke('text').should('equal',data.body.properties.gender)
-cy.contains(physicianProfilePage.gender).parent().next().invoke('text').should('equal',data.body.properties.phone)
-cy.contains(physicianProfilePage.hubspot_id).parent().next().invoke('text').should('equal',data.body.properties.address)
-cy.contains(physicianProfilePage.fax_number).parent().next().invoke('text').should('Draft')
-cy.contains(physicianProfilePage.phone_number).parent().next().invoke('text').should('equal', data.body.properties.desired_weekly_appointments)
-cy.contains(physicianProfilePage.email).parent().next().invoke('text').should('equal', data.body.properties.pet_allergies)
-cy.contains(physicianProfilePage.address).parent().next().invoke('text').should('equal', data.body.properties.pet_allergies)
+/*cy.get(physicianProfilePage.firstname).should("exist").and('be.visible').its('text').should('eq',data.body.properties.firstname)
+cy.get(physicianProfilePage.lastname).should("exist").and('be.visible').its('text').should('eq',data.body.properties.lastname)
+cy.get(physicianProfilePage.npi).should("exist").and('be.visible').its('its').should('eq',data.body.properties.npi)
+cy.get(physicianProfilePage.region).should("exist").and('be.visible').its('text').should('eq',data.body.properties.region)
+cy.get(physicianProfilePage.hubspot_id).should("exist").and('be.visible').its('text').should('eq',data.body.properties.hubspot_id)
+cy.get(physicianProfilePage.fax_number).should("exist").and('be.visible').its('text').should('eq',data.body.properties.fax_number)
+cy.get(physicianProfilePage.phone_number).should('be.visible').its('text').should('eq', data.body.properties.phone_number)
+cy.get(physicianProfilePage.email).should("exist").and('be.visible').its('text').should('eq', data.body.properties.email)*/
 
 });

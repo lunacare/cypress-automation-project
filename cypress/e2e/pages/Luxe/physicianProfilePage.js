@@ -1,17 +1,17 @@
 export class PhysicianProfilePage{
 
 constructor(){
-    this.prefix="Prefix";
-    this.firstname="First Name";
-    this.lastname="Last Name";
-    this.npi="Npi";
-    this.region="Region";
+    this.prefix=".row-prefix > td";
+    this.firstname=".row-first_name > td";
+    this.lastname=".row-last_name > td";
+    this.npi=".row-npi > td";
+    this.region=".row-region > td";
     this.gender="Gender";
-    this.hubspot_id="Hubspot";
-    this.fax_number="Fax Number";
-    this.phone_number = "Phone Number";
-    this.email="Email";
-    this.address="Address"
+    this.hubspot_id=".row-hubspot_id > td";
+    this.fax_number=".row-fax_number > td";
+    this.phone_number = ".row-phone_number > td";
+    this.email=".row-email > td";
+    this.address=".row-address > td"
 
 }
 

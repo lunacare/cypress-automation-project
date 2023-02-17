@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test:repeat": "cypress-repeat run --config watchForFileChanges=false",
-    "test": "cypress open run --config watchForFileChanges=false"
+    "test": "cypress open run --config watchForFileChanges=false ",
+    "test:headless": "cypress run --config watchForFileChanges=fals --browser chrome"
   },
   "keywords": [],
   "author": "",
