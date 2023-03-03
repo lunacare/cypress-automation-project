@@ -1,0 +1,21 @@
+{
+    "lambdatest_auth": {
+        "username": "",
+        "access_key": ""
+    },
+    "browsers": [
+        {
+            "browser": "Chrome",
+            "platform": "Windows 10",
+            "versions": [
+                "latest"
+            ]
+        }
+    ],
+    "run_settings": {
+        "build_name": "build-name-cypress-koombea",
+        "reporter_config_file": "base_reporter_config.json",
+        "parallels": 1,
+        "specs": "**/*.feature"
+    }
+}

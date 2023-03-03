@@ -1,8 +1,8 @@
 const { defineConfig } = require('cypress')
 const gmailTester = require("gmail-tester");
 const path = require("path");
-const  webpack  = require("@cypress/webpack-preprocessor");
-const cucumberPreprocesor  = require("@badeball/cypress-cucumber-preprocessor");
+const webpack = require("@cypress/webpack-preprocessor");
+const cucumberPreprocesor = require("@badeball/cypress-cucumber-preprocessor");
 
 async function setupNodeEvents(on, config) {
   on("task", {
@@ -14,48 +14,48 @@ async function setupNodeEvents(on, config) {
       );
       return messages;
     },
-  });     
-  
+  });
+
   on('task', {
-    log(message){
+    log(message) {
       console.log(`console log task: ${message}`)
       return null;
     }
   })
-  
-  await cucumberPreprocesor.addCucumberPreprocessorPlugin(on,config)
+
+  await cucumberPreprocesor.addCucumberPreprocessorPlugin(on, config)
   on("file:preprocessor",
     webpack({
-      webpackOptions:{
-        resolve:{
-          alias:{
-             "@assertions":path.resolve(__dirname,"cypress/e2e/assertions"),
-             "@commands":path.resolve(__dirname,"cypress/e2e/commands"),
-             "@fixtures":path.resolve(__dirname,"cypress/fixtures"),
-             "@support":path.resolve(__dirname,"cypress/support"),
-             "@pages":path.resolve(__dirname,"cypress/e2e/pages"),
-             "@config":path.resolve(__dirname,"cypress/e2e/config"),
+      webpackOptions: {
+        resolve: {
+          alias: {
+            "@assertions": path.resolve(__dirname, "cypress/e2e/assertions"),
+            "@commands": path.resolve(__dirname, "cypress/e2e/commands"),
+            "@fixtures": path.resolve(__dirname, "cypress/fixtures"),
+            "@support": path.resolve(__dirname, "cypress/support"),
+            "@pages": path.resolve(__dirname, "cypress/e2e/pages"),
+            "@config": path.resolve(__dirname, "cypress/e2e/config"),
           },
-          extensions:[".js"],
+          extensions: [".js"],
         },
         module: {
-          rules:[{
-              test:/\.feature$/,
-              
-              use:[{
-                loader: "@badeball/cypress-cucumber-preprocessor/webpack",
-                  options: config,
-                },
-              ],
+          rules: [{
+            test: /\.feature$/,
+
+            use: [{
+              loader: "@badeball/cypress-cucumber-preprocessor/webpack",
+              options: config,
             },
+            ],
+          },
           ],
         },
       },
     })
   );
 
- 
-return config;
+
+  return config;
 }
 module.exports = defineConfig({
   projectId: '2czk7i',
@@ -63,18 +63,23 @@ module.exports = defineConfig({
   experimentalSessionAndOrigin: true,
   experimentalModifyObstructiveThirdPartyCode: true,
   redirectionLimit: 1,
+  defaultCommandTimeout: 10000,
+  run_setting: {
+    cypress_config_file: "cypress.config.js"
+  },
   env: {
     EMAIL1: 'test-automation-1@getluna.com',
-    EMAIL: 'test-automation-2@getluna.com',
+    EMAIL: 'test-automation-5@getluna.com',
     PASSWORD: 'Alg@rrobo10123!',
     environment: 'ALPHA'
   },
   userAgent:
     'user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36',
   e2e: {
-   setupNodeEvents,
-   specPattern:"**/*.feature",
-}})
+    setupNodeEvents,
+    specPattern: "**/*.feature",
+  }
+})
 
 
 
