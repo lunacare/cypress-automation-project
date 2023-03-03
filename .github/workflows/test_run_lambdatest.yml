@@ -21,13 +21,11 @@ jobs:
             aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/token-test-automation-1.json .  --profile beta-workloads
             aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/token-test-automation-2.json .  --profile beta-workloads
             
-            
-
     - name: Cypress run
       uses: cypress-io/github-action@v5.x.x # use the explicit version number
-        with:
-          build: npm run build
-          start: npm start
+      with:
+        build: npm run build
+        start: npm start
 
     - name: Running tests
       run: |
