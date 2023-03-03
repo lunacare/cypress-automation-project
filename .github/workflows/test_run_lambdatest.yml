@@ -3,32 +3,33 @@ name: Runtest cypress
 on: [push]
 
 jobs:
+
   build-cypress:
 
-  runs-on: [self-hosted]
+    runs-on: [self-hosted]
 
     permissions:
-      contents: read
+        contents: read
 
     steps:
 
     - name: Downloading test-automation-resources from S3
       run: |
-        echo "get email credentials"
-        aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/credentials-test-automation-1.json .  --profile beta-workloads
-        aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/credentials-test-automation-2.json .  --profile beta-workloads
-        aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/token-test-automation-1.json .  --profile beta-workloads
-        aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/token-test-automation-2.json .  --profile beta-workloads
-        
-        
+            echo "get email credentials"
+            aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/credentials-test-automation-1.json .  --profile beta-workloads
+            aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/credentials-test-automation-2.json .  --profile beta-workloads
+            aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/token-test-automation-1.json .  --profile beta-workloads
+            aws s3 cp s3://luna-beta-workloads-ios/test-automation-resources/token-test-automation-2.json .  --profile beta-workloads
+            
+            
 
     - name: Cypress run
-        uses: cypress-io/github-action@v5.x.x # use the explicit version number
+      uses: cypress-io/github-action@v5.x.x # use the explicit version number
         with:
           build: npm run build
           start: npm start
 
     - name: Running tests
-        run: |
+      run: |
           lambdatest-cypress run --username ${{secrets.LAMBDA_TEST_USERNAME}} --access_key ${{secrets.LAMBDA_TEST_ACCESS_KEY}}
 

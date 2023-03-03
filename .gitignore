@@ -6,3 +6,4 @@ token-test-automation-1.json
 token-test-automation-2.json
 hubspot-keys.json
 cypress.env.json
+.vscode/
