@@ -6,7 +6,7 @@
     "browsers": [
         {
             "browser": "Chrome",
-            "platform": "Windows 10",
+            "platform": "macOS Ventura",
             "versions": [
                 "latest"
             ]

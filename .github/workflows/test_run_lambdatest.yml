@@ -3,7 +3,7 @@ name: Runtest cypress
 on: [push]
 
 jobs:
-  build:
+  build-cypress:
 
   runs-on: [self-hosted]
 
@@ -22,13 +22,13 @@ jobs:
         
         
 
-      - name: Cypress run
+    - name: Cypress run
         uses: cypress-io/github-action@v5.x.x # use the explicit version number
         with:
           build: npm run build
           start: npm start
 
-      - name: Running tests
+    - name: Running tests
         run: |
           lambdatest-cypress run --username ${{secrets.LAMBDA_TEST_USERNAME}} --access_key ${{secrets.LAMBDA_TEST_ACCESS_KEY}}
 
