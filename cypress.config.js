@@ -35,6 +35,7 @@ async function setupNodeEvents(on, config) {
             "@support": path.resolve(__dirname, "cypress/support"),
             "@pages": path.resolve(__dirname, "cypress/e2e/pages"),
             "@config": path.resolve(__dirname, "cypress/e2e/config"),
+            "@root": path.resolve(__dirname,"")
           },
           extensions: [".js"],
         },

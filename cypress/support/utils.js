@@ -19,6 +19,10 @@ export function getHubspotToken() {
     const hubspot_keys = require("../../hubspot-keys.json");
     return hubspot_keys[Cypress.env('environment')];
 }
+export function getLuxeToken() {
+    const luxe_token = require("../../luxe_token_authentication.json");
+    return luxe_token[Cypress.env('environment')];
+}
 
 
 export function customWaitElement(xpath, times, miliseconds) {

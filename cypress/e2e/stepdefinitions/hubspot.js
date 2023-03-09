@@ -7,7 +7,7 @@ require("@commands/hubspot_requests/syncPhysician");
 require("@commands/hubspot_requests/createDraftTherapists");
 require("@commands/hubspot_requests/createPhysician");
 require("@commands/luxe/luxeGoogleAuthentication");
-require("@commands/luxe/luxeGoogleWithAuthenticationCodev2");
+require("@commands/luxe/openLuxeWithToken");
 require("@commands/luxe/searchTherapistbyEmail");
 require("@commands/luxe/searchPhysicianByNpi");
 require("@assertions/luxe/therapistProfileAssertions");
@@ -17,11 +17,7 @@ require("@assertions/luxe/physicianProfileAssertions");
 import { luna_luxe_url } from '@config/environment'
 
 beforeEach(function () {
-
-  cy.session("preserving session", () => {
-    cy.luxeGoogleWithAuthenticationCodev2()
-  })
-  cy.visit(luna_luxe_url[Cypress.env('environment')] + '/admin/dashboard')
+    cy.openLuxeWithToken()
 })
 
 
