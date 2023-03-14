@@ -8,3 +8,5 @@ hubspot-keys.json
 cypress.env.json
 .vscode/
 luxe_token_authentication.json
+ yarn-error.log
+ yarn.lock
